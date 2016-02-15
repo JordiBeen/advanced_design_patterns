@@ -14,6 +14,12 @@ bird = Bird()
 # Create a snake
 snake = Snake()
 
+_animals = []
+_animals.append(dog1)
+_animals.append(dog2)
+_animals.append(bird)
+_animals.append(snake)
+
 # Set names for all our new animals
 dog1.SetName('Boris')
 dog2.SetName('Jaap')
@@ -28,17 +34,17 @@ snake.Move()
 dog2.Move()
 
 # Lets get the names of our animals
-print('We have a dog named:')
-print(dog1.GetName())
-print('We have a dog named:')
-print(dog2.GetName())
-print('We have a bird named:')
-print(bird.GetName())
-print('We have a snake named:')
-print(snake.GetName())
+print('We have an animal called:')
+for animal in _animals:
+    if hasattr(animal, 'GetName'):
+        animal.GetName()
+    else:
+        print('This animal doesn\'t have a name')
 
 # Let our animals make some sounds
 print('They make the following sounds:')
-dog1.MakeSound()
-dog2.MakeSound()
-bird.MakeSound()
+for animal in _animals:
+    if hasattr(animal, 'MakeSound'):
+        animal.MakeSound()
+    else:
+        print('This animal doesn\'t make sound')

@@ -6,7 +6,7 @@ class Animal():
         print('Moving')
 
     def GetName(self):
-        return self._name
+        print(self._name)
 
     def SetName(self, name):
         self._name = name
